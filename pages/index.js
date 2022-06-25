@@ -2,6 +2,9 @@ import Head from "next/head";
 import { GraphQLClient, gql } from "graphql-request";
 import styles from "../styles/Home.module.css";
 import BlogCard from "../components/blogCard";
+import "bootstrap/dist/css/bootstrap.css";
+
+import getPosts from "../services/index";
 
 const graphcms = new GraphQLClient(
   "https://api-eu-west-2.graphcms.com/v2/cl4qgu17l3v7b01z4av1nfayj/master"
@@ -14,6 +17,7 @@ const QUERY = gql`
       title
       datePublished
       slug
+      excerpt
       content {
         html
       }
@@ -53,6 +57,7 @@ export default function Home({ posts }) {
         {posts.map((post) => (
           <BlogCard
             title={post.title}
+            excerpt={post.excerpt}
             author={post.author}
             coverPhoto={post.coverPhoto}
             key={post.id}
@@ -60,7 +65,6 @@ export default function Home({ posts }) {
             slug={post.slug}
           />
         ))}
-        
       </main>
     </div>
   );

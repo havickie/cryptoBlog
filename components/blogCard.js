@@ -3,6 +3,7 @@ import styles from "../styles/blogCard.module.css";
 
 export default function BlogPost({
   title,
+  excerpt,
   author,
   coverPhoto,
   datePublished,
@@ -16,19 +17,18 @@ export default function BlogPost({
         </div>
       </Link>
       <div className={styles.text}>
-        <h1>{title}</h1>
-              <div className={styles.details}>
-                  <div className={styles.author}>
-                      <img src="{author.avatar.url}" alt="" />
-                      <h3>{ author.name}</h3>
-                  </div>
-                  <div className={styles.date}>
-                      <h3>{datePublished}</h3>
-                  </div>
-
-                  </div>
+        <h4>{title}</h4>
+        <h6>{excerpt}</h6>
+        <div className={styles.details}>
+          <div className={styles.author}>
+            <img src="{author.avatar.url}" alt="" />
+            <h3>{author.name}</h3>
+          </div>
+          <div className={styles.date}>
+            <h3>{datePublished}</h3>
+          </div>
         </div>
       </div>
-
+    </div>
   );
 }
