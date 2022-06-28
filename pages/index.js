@@ -1,48 +1,9 @@
 import Head from "next/head";
-import { GraphQLClient, gql } from "graphql-request";
 import styles from "../styles/Home.module.css";
-import BlogCard from "../components/blogCard";
+import PostCard from '../components/PostCard'
 import "bootstrap/dist/css/bootstrap.css";
-
-import getPosts from "../services/index";
-
-const graphcms = new GraphQLClient(
-  "https://api-eu-west-2.graphcms.com/v2/cl4qgu17l3v7b01z4av1nfayj/master"
-);
-
-const QUERY = gql`
-  {
-    posts {
-      id
-      title
-      datePublished
-      slug
-      excerpt
-      content {
-        html
-      }
-      author {
-        name
-        avatar {
-          url
-        }
-      }
-      coverPhoto {
-        url
-      }
-    }
-  }
-`;
-
-export async function getStaticProps() {
-  const { posts } = await graphcms.request(QUERY);
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 10,
-  };
-}
+import PostWidject from "../components/PostWidject";
+import { getPosts } from "../services/index";
 
 export default function Home({ posts }) {
   return (
@@ -53,19 +14,31 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        {posts.map((post) => (
-          <BlogCard
-            title={post.title}
-            excerpt={post.excerpt}
-            author={post.author}
-            coverPhoto={post.coverPhoto}
-            key={post.id}
-            datePublished={post.datePublished}
-            slug={post.slug}
-          />
-        ))}
-      </main>
+      <div className={styles.main}>
+        
+          {posts.map((post) => (
+            <PostCard
+              post={post.node}
+              key={post.title}
+              excerpt={post.excerpt}
+              featuredPhoto={post.featuredPhoto}
+              datePublished={post.datePublished}
+              slug={post.slug}
+            />
+          ))}
+      
+      </div>
+      <div>
+        <PostWidject />
+      </div>
     </div>
   );
+}
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+  return {
+    props: {
+      posts,
+    },
+  };
 }

@@ -12,7 +12,7 @@ const QUERY = gql`
       id
       title
       slug
-      datePublished
+      datePublished    
       author {
         id
         name

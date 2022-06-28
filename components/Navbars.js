@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import logo from "./../images/logo-white.png";
