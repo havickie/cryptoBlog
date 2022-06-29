@@ -1,9 +1,8 @@
-import Head from "next/head";
+import Head from "next/head"; 
 import styles from "../styles/Home.module.css";
-import PostCard from '../components/PostCard'
+import { PostCard, PostWidget } from "../components";
 import "bootstrap/dist/css/bootstrap.css";
-import PostWidject from "../components/PostWidject";
-import { getPosts } from "../services/index";
+import { getPosts } from "../services/index.js";
 
 export default function Home({ posts }) {
   return (
@@ -14,8 +13,7 @@ export default function Home({ posts }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
-     <div className={styles.main}>
-        
+        <div className={styles.main}>
           {posts.map((post) => (
             <PostCard
               post={post.node}
@@ -26,13 +24,11 @@ export default function Home({ posts }) {
               slug={post.slug}
             />
           ))}
-      
-      </div>
-      <div>
-        <PostWidject />
-      </div>    
-</> 
-     
+        </div>
+        <div>
+          <PostWidget />
+        </div>
+      </>
     </div>
   );
 }

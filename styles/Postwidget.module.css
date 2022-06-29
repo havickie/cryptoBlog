@@ -1,7 +1,19 @@
-.imgContainer{
-
+.img{
+border-radius: 20px;
+margin-bottom: 20px;
 }
 
-.imgContainer img{
-    
+.pb{
+    padding-bottom: 10px;
+}
+.imgc{
+    height: 20px;
+    width: 20px;
+    background-color:red;
+    padding: 40px;
+}
+.widget{
+    width:20rem;
+    float:right;
+    margin: auto;
 }

@@ -13,7 +13,8 @@
   position: absolute;
   object-position: top;
   height: 20rem;
-  width: fit-content;
+  width: 39rem;
+  /* width: fit-content; */
   object-fit: cover;
   cursor: pointer;
 }
@@ -21,7 +22,6 @@
   transition: all 0.5s;
   height: 20.3rem;
 }
-
 
 .card .h1 {
   transition: all 0.5s;
@@ -44,7 +44,7 @@
 .card .a {
   text-decoration: none;
 }
-.excerpt{
+.excerpt {
   display: -webkit-box;
   word-break: break-word;
   -webkit-box-orient: vertical;
@@ -52,15 +52,10 @@
   overflow: hidden;
   text-decoration: none;
   margin-top: 1.2rem;
-   padding-bottom:2rem;
+  padding-bottom: 2rem;
 }
-.date{
- 
+.date {
   font-weight: 500;
 }
 
-@media screen and (max-width: 768px) {
-  .card {
-    margin: 0rem 2rem;
-  }
-}
+

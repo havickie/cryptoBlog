@@ -2,6 +2,7 @@ import { request, gql } from "graphql-request";
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
+
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
@@ -15,10 +16,6 @@ export const getPosts = async () => {
             featuredImage {
               url
             }
-            categories {
-              name
-              slug
-            }
           }
         }
       }
@@ -29,27 +26,55 @@ export const getPosts = async () => {
   return result.postsConnection.edges;
 };
 
+
+export const getPostDetails = async (slug) => {
+  const query = gql`
+    query GetPostDetails($slug:String) {
+      post(where: {slug: $slug}) {
+            createdAt
+            slug
+            title
+            excerpt
+            featuredImage {
+              url
+            }
+        
+            content{
+              raw
+            }
+          }
+        }
+  `;
+  const result = await request(graphqlAPI, query,{slug});
+
+  return result.posts;
+};
+
+
+
 export const getRecentPosts = async () => {
   const query = gql`
-query GETPostDetails(){
-posts(orderBy: createdAt_ASC
-  last: 3
-  ) {
-    title
-    featuredImage{
-      url
+    query GetPostDetails() {
+      posts(
+        orderBy: createdAt_ASC
+        last: 3
+      ) {
+        title
+        featuredImage {
+          url
+        }
+        createdAt
+        slug
+      }
     }
-    slug
-  }
-}
-
-`;
+  `;
   const result = await request(graphqlAPI, query);
 
   return result.posts;
 };
 
-export const getSimilarPosts = async () => {
+
+export const getSimilarPosts = async (slug) => {
   const query = gql`
     query GetPostDetails($slug: String!, $categories: [String!]) {
       posts(
@@ -63,12 +88,13 @@ export const getSimilarPosts = async () => {
         featuredImage {
           url
         }
+        createdAt
         slug
       }
     }
   `;
 
-  const result = await request(graphqlAPI, query);
+  const result = await request(graphqlAPI, query,{slug});
 
   return result.posts;
 };
