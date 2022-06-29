@@ -1,11 +1,12 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { getRecentPosts, getRelatedPosts } from "../services";
+import { getSimilarPosts, getRecentPosts } from "../services";
 import styles from "../styles/Postwidget.module.css";
 
 
 const PostWidget = ({ slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
+
   useEffect(() => {
     if (slug) {
       getSimilarPosts(slug).then((result) => {
@@ -13,9 +14,11 @@ const PostWidget = ({ slug }) => {
           result
         )
       });
-    } else getRecentPosts(slug).then((result) => {
-      setRelatedPosts(result)
-    } );
+    } else {
+      getRecentPosts().then((result) => {
+        setRelatedPosts(result)
+      });
+    }
   }, [slug]);
 
 
