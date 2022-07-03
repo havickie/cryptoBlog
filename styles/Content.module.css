@@ -2,14 +2,46 @@
      position: sticky; 
 
 }
+.contentImg{
+    width: 100%;
+  height: auto;
+  margin: auto;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (min-width: 992px) {
+    .container {
+        /* width: 970px; */
+     }
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+}
+.post{
+
+        grid-column: span 8;
+}
+.widget{
+grid-column: span 4;
+}
 
 
 
 @media screen and (max-width: 767px) {
     .widget{
         display: none;
-       
-       
-        
-    }
+        }
+        .row {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 0px;
+        }
 }

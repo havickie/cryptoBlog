@@ -1,7 +1,7 @@
-import Head from "next/head"; 
+import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { PostCard, PostWidget } from "../components";
-import "bootstrap/dist/css/bootstrap.css";
+
 import { getPosts } from "../services/index.js";
 
 export default function Home({ posts }) {
@@ -14,14 +14,10 @@ export default function Home({ posts }) {
       </Head>
       <>
         <div className={styles.main}>
-          {posts.map((post) => (
+          { posts.map((post, index) => (
             <PostCard
               post={post.node}
-              key={post.title}
-              excerpt={post.excerpt}
-              featuredPhoto={post.featuredPhoto}
-              datePublished={post.datePublished}
-              slug={post.slug}
+              key={index}
             />
           ))}
         </div>
