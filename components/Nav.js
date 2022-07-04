@@ -8,7 +8,7 @@ const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
-    <div className={styles.navigation}>
+    <nav className={styles.navigation}>
       <a className={styles.logo} href="">
         <Image width={200} height={60} src={logo} alt="Logo" />
       </a>
@@ -76,7 +76,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
 };
 
