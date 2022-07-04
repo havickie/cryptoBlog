@@ -1,11 +1,16 @@
 import React from "react";
 import { getPosts, getPostDetails } from "../../services/index";
 
-import { PostWidget, Content } from "../../components";
+import { PostWidget, Content, Loader } from "../../components";
 
 import styles from "../../styles/Content.module.css";
-
+import { useRouter } from "next/router";
 const PostDetails = ( {post} ) => {
+  const router = useRouter();
+  if (router.isFallback) {
+   return <Loader/>
+ }
+
   return (
     <>
       <div className={styles.container}>
