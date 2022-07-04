@@ -1,3 +1,4 @@
+import '../styles/BlogCard.module.scss';
 import "../styles/globals.scss";
 
 import React from "react";

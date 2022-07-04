@@ -13,14 +13,14 @@ const PostCard = ({ post }) => {
         </Link>
       </div>
       <h1 >
-        <a className={`${styles.texts}`} href={`/post/${post.slug}`}>{post.title}</a>
+        <Link className={`${styles.texts}`} href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
       <div>
-        <p>
-          <a className={styles.excerpt} href={`/post/${post.slug}`}>
+        <span>
+          <Link className={styles.excerpt} href={`/post/${post.slug}`}>
             {post.excerpt}
-          </a>
-        </p>
+          </Link>
+        </span>
       </div>
       <div>
         <span className={styles.date}>

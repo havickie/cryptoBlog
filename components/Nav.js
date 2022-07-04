@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.navigation}>
-      <a className={styles.logo} href="">
+      <a className={styles.logo} href="https://naira4dollar.com/">
         <Image width={200} height={60} src={logo} alt="Logo" />
       </a>
 
@@ -33,7 +33,9 @@ const Navbar = () => {
           />
         </svg>
       </button>
-      <div className={styles.navigationMenu}>
+      <div   className={
+        isNavExpanded ? `${styles.navigationMenu} ${styles.expanded}` : `${styles.navigationMenu}`
+        }>
         <ul>
           <li>
             <a className={styles.links} href="https://naira4dollar.com/how">

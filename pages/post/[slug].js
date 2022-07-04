@@ -1,5 +1,5 @@
 import React from "react";
-import { getPosts, getPostDetails } from "../../services";
+import { getPosts, getPostDetails } from "../../services/index";
 
 import { PostWidget, Content } from "../../components";
 

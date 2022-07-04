@@ -9,6 +9,7 @@
   background-color: #fff;
   color: black;
   box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  z-index: 200;
 }
 
 
@@ -91,26 +92,31 @@
     .logo {
       width: 10rem;
       height: 3.5rem;
-      margin-left: 50px;
+      margin-left: 10px;
     }
   }
 
   
   @media screen and (max-width: 768px) {
+    .navigation{
+      width: 100%;
+      
+    }
     .links{
-      font-size: 1px;
-      padding-top: .5rem;
+      font-size: 14px;
+      
+      font-weight: 500;
       color: #000;
       margin: 0 1.8rem;
     
     }
+    .navigationMenu ul {display: none;}
     .hamburger {
       display: block;
-    } .navigationMenu ul {
-        display: none;
-      }
-      .navigationMenu .expanded ul {
+    } 
+       .expanded ul {
           display: block;
+          translate:all 1s ;
         }
     
         .navigationMenu ul {
@@ -122,23 +128,45 @@
           flex-direction: column;
        
           width: 100%;
-          height: calc(100vh - 77px);
+          height: calc(80vh - 77px);
           background-color: white;
-          border-top: 1px solid black;
+        
         }
         .navigationMenu li {
-        
+        padding: 1rem;
           text-align: center;
           margin: 0;
         }
         .navigationMenu li a {
-          color: black;
          
+         display: inline;
           width: 100%;
-          padding: 1.5rem 0;
+         
         }
         .navigationMenu li:hover {
           background-color: #eee;
         }
+        .btn2{
+          background:rgb(255, 249, 229) ;
+          color: #2642af;
+          border-radius: .3rem;
+          padding: .5rem 2.5rem;
+          font-weight: 500;
+        }
+        .btn1{
+          background: #2642af;
+          color: #fff;
+          border-radius: .3rem;
+          padding: .5rem 2rem;
+        }
       }
   
+
+      @media screen and (max-width: 768px) {
+      .navigationMenu ul {
+
+     
+        height: calc(85vh - 77px);
+        background-color: white;
+      
+      }}
