@@ -1,11 +1,23 @@
 .widget{
-     position: sticky; 
+     position: fixed;
+     margin-left: 5%;
+     margin-top: 0; 
+     margin-bottom: 30rem;
 
+}
+@media screen and (max-width: 1000px) {
+    .widget{
+        /* position: fixed; */
+        margin-left: 0%; 
+   
+   }
 }
 .contentImg{
     width: 100%;
+    border-radius: 10px;
   height: auto;
   margin: auto;
+  margin-bottom: 2.5rem;
 }
 
 
@@ -31,8 +43,8 @@
 
         /* grid-column: span 8; */
 }
-.widget{
-/* grid-column: span 4; */
+.sticky{
+
 }
 .date{
     color: #707A8A;

@@ -7,27 +7,28 @@ const PostWidget = ({ slug, categories }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
-    if (slug) {
-      getSimilarPosts( categories, slug ).then((result) => {
+   if  (slug) {
+      getRecentPosts().then((result) => {
+        setRelatedPosts(result);
+      });
+   } else{
+      getSimilarPosts(categories, slug).then((result) => {
         setRelatedPosts(result);
       });
     } 
+   
   }, [slug]);
 
   return (
     <div className="container">
       <div className={styles.widget}>
-        <h3 className="">{slug ? 'Related Posts' : 'Recent Posts'}</h3>
+        <h3 className="">{slug ? 'Recent Posts' : ''}</h3>
       {relatedPosts.map((post, index) => (
           <div key={index} className="">
             <div key={index}>
-              <img
-                className={styles.img}
-                src={post.featuredImage.url}
-                width="300"
-                height="150"
-                alt=""
-              />
+             <Link href={`/post/${post.slug}`}>
+          <img className={styles.img} src={post.featuredImage.url} alt={post.title} />
+        </Link>
             </div>
             <div className={styles.pb}>
               <Link href={`/post/${post.slug}`} className="" key={index}>

@@ -13,9 +13,11 @@ const PostDetails = ( {post} ) => {
           <div className={styles.post}>
             <Content post={post}/>
           </div>
-          <div className={styles.widget}>
+          <div className={styles.sticky}>
+             <div className={styles.widget}>
             <PostWidget slug={post.slug} />
           </div>
+        </div> 
         </div>
       </div>
     </>
