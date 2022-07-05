@@ -12,10 +12,10 @@
    
    }
 }
-.contentImg{
-    width: 100%;
+div .contentImg{
+    width:10%;
     border-radius: 10px;
-  height: auto;
+  height: 0rem;
   margin: auto;
   margin-bottom: 2.5rem;
 }
@@ -46,7 +46,7 @@
 }
 
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 900px) {
    
         .row {
             display: grid;
