@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "../styles/Content.module.css";
-import Link from "next/link";
 import moment from "moment";
 import Image from "next/image";
 

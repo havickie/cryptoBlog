@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { getSimilarPosts, getRecentPosts } from "../services/index.js";
+import {  getRecentPosts } from "../services/index.js";
 import styles from "../styles/Postwidget.module.css";
 import Image from "next/image";
 
