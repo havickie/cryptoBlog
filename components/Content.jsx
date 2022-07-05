@@ -14,7 +14,8 @@ const Content = ({ post}) => {
       </div>
 
       <div>
-        <Image layout="fill"
+        <Image width='100%'
+          height='100%'
           src={post.featuredImage.url}
           alt={post.title}
           className={styles.contentImg}
