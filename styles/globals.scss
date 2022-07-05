@@ -15,7 +15,7 @@ body {
   text-shadow: 0px 2px 0px rgb(0 0 0 / 30%);
 }
 
-.excerp{
+.excerpt{
   color: red;
 }
 
@@ -29,10 +29,7 @@ strong{
   color: #1E2329;
 }
 
-p{
-  font-size: larger;
 
-}
 
   a :-webkit-any-link {
     color: inherit;
@@ -62,14 +59,18 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom: 1rem;
     font-weight: 500;
     font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+  
   width: 100%;
    
   }
   @media screen and (max-width: 768px) {
     div{
-     
+     font-weight: 100;
     width: fit-content;
      
-    }
+    }p{
+  font-size: 14px;
+  font-weight: 400;
+
+}
   }
