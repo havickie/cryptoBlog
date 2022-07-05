@@ -12,7 +12,7 @@
   text-decoration: none;
  color: #1E2329;;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-gap: 3rem;
   padding: 6rem;
 }
@@ -24,10 +24,10 @@
    background: rgb(26, 26, 125);
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   .main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 5rem 2rem;
 
     padding: 2rem 1.3rem;
