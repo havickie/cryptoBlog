@@ -15,7 +15,7 @@ const Content = ({ post}) => {
       </div>
 
       <div>
-        <Image
+        <Image layout="fill"
           src={post.featuredImage.url}
           alt={post.title}
           className={styles.contentImg}

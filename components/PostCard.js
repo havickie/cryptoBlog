@@ -10,7 +10,7 @@ const PostCard = ({ post }) => {
     <div className={`container ${styles.card} `}>
       <div className={styles.imgContainer}>
         <Link href={`/post/${post.slug}`}>
-          <Image src={post.featuredImage.url} alt={post.title} />
+          <Image layout="fill" src={post.featuredImage.url} alt={post.title} />
         </Link>
       </div>
       <h1 >

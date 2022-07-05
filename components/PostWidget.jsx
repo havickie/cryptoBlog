@@ -24,7 +24,7 @@ const PostWidget = ({ slug }) => {
           <div key={index} className="">
             <div key={index}>
              <Link href={`/post/${post.slug}`}>
-          <Image className={styles.img} src={post.featuredImage.url} alt={post.title} />
+          <Image layout="fill" className={styles.img} src={post.featuredImage.url} alt={post.title} />
         </Link>
             </div>
             <div className={styles.pb}>
