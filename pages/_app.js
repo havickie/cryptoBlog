@@ -2,7 +2,7 @@ import '../styles/BlogCard.module.scss';
 import "../styles/globals.scss";
 
 import React from "react";
-import Layout from "../components/layout.jsx";
+import Layout from "../components/Layout.jsx";
 
 function MyApp({ Component, pageProps }) {
   return (
