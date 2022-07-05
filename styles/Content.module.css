@@ -5,6 +5,10 @@
      margin-bottom: 30rem;
 
 }
+.img{
+    width: 0rem;
+  height: 0rem;
+}
 @media screen and (max-width: 1000px) {
     .widget{
         /* position: fixed; */
