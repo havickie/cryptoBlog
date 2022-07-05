@@ -1,6 +1,8 @@
 import { style } from '@mui/system';
 import React from 'react';
 import styles from './../styles/Loader.module.css'
+
+
 const Loader = () => (
   <div className="text-center">
     <button
