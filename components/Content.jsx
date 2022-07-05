@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/Content.module.css";
 import Link from "next/link";
 import moment from "moment";
+import Image from "next/image";
 
 const Content = ({ post}) => {
   return (
@@ -14,7 +15,7 @@ const Content = ({ post}) => {
       </div>
 
       <div>
-        <img
+        <Image
           src={post.featuredImage.url}
           alt={post.title}
           className={styles.contentImg}

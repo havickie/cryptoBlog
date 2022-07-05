@@ -2,8 +2,9 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { getSimilarPosts, getRecentPosts } from "../services/index.js";
 import styles from "../styles/Postwidget.module.css";
+import Image from "next/image";
 
-const PostWidget = ({ slug, categories }) => {
+const PostWidget = ({ slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
@@ -23,7 +24,7 @@ const PostWidget = ({ slug, categories }) => {
           <div key={index} className="">
             <div key={index}>
              <Link href={`/post/${post.slug}`}>
-          <img className={styles.img} src={post.featuredImage.url} alt={post.title} />
+          <Image className={styles.img} src={post.featuredImage.url} alt={post.title} />
         </Link>
             </div>
             <div className={styles.pb}>
