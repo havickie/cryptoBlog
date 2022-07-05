@@ -28,24 +28,17 @@
     padding-right: 25px;
 
 }
-@media (min-width: 992px) {
-    .container {
-        /* width: 970px; */
-     }
-}
+/* @media (min-width: 992px) {
+  
+} */
 
 .row {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 20px;
 }
-.post{
 
-        /* grid-column: span 8; */
-}
-.sticky{
 
-}
 .date{
     color: #707A8A;
     font-weight: 600;
@@ -54,9 +47,7 @@
 
 
 @media screen and (max-width: 769px) {
-    .widget{
-       
-        }
+   
         .row {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
